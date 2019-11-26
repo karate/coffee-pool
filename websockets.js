@@ -49,7 +49,7 @@ class WS {
 
 
   sendWindow(win) {
-    var d = {type: 'window', data: {win: win}}
+    var d = {type: 'window', win: win}
     this.socket.send(JSON.stringify(d));
   }
 }

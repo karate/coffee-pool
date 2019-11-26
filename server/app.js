@@ -69,7 +69,8 @@ wsServer.on('request', function(request) {
       }
       else if (payload.type == 'window' ) {
         console.log('Received window', payload );
-        windowList.push(payload.data.win);
+        payload.win.owner = connection.userIdx;
+        windowList.push(payload.win);
         console.log(windowList);
         broadcast(JSON.stringify({type: 'windowList', windows: windowList}));
       }

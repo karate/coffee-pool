@@ -61,6 +61,10 @@ class Timeline {
       var endPerc = this.getPercentageOfDay(endDate);
       // Create the window
       var win = document.createElement('div');
+      var idxInCookie = document.cookie.split('=')[1];
+      if (idxInCookie == windowData.owner) {
+          win.classList.add('mine');
+      }
       // Position
       win.style.marginLeft = startPerc + "%";
       win.style.width = "{0}%".replace("{0}", endPerc - startPerc);

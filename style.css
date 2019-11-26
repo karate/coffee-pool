@@ -84,15 +84,18 @@ h3#current-time {
 #windows div {
   padding: 4px 0;
   white-space: nowrap;
-  background-color: var(--mouseover-color);
   color: white;
+  background-color: #a28c54;
   margin: 2px 0;
   border-radius: 2px;
   overflow: visible;
   font-size:0.7rem;
   box-shadow: 1px 1px 1px black;
   text-shadow: 1px 1px 1px black;
+}
 
+#windows div.mine {
+  background-color: var(--mouseover-color);
 }
 
 ul#guest-list {
@@ -106,7 +109,7 @@ ul#guest-list li {
   background-color: white;
   border-radius: 4px;
   display: inline-block;
-  cursor: pointer;
+  /*cursor: pointer;*/
   transition: 0.3s;
 }
 
@@ -121,10 +124,10 @@ ul#guest-list li.current {
   background-color: var(--mouseover-color);
 }
 
-ul#guest-list li:hover {
+/*ul#guest-list li:hover {
   color: white;
   background-color: #599099;
-}
+}*/
 
 button#add-dummy-window {
   margin: 0 10px 40px 0;
