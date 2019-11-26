@@ -4,7 +4,7 @@ import WS from './websockets.js'
 
 // Create a Timeline Object
 window.ws = new WS();
-window.timeline = new Timeline(0, 10);
+window.timeline = new Timeline(8, 20);
 
 // Functions that should be available in html 'onlick=' attribute
 // will be assinged to `window`
