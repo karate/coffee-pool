@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CoffeePool</title>
+    <meta charset=utf8 />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script type="module" src="./script.js"></script>
+  </head>
+  <body>
+    <h1>Coffee Pool</h1>
+    <h2>organise your coffee needs</h2>
+    <h3 id="current-time">&nbsp;</h3>
+    <div class="add-window">
+      <div class="start-time container">
+        <label for="start-time">Start time</label>
+        <input id="start-time" placeholder="10:00" maxlength="5">
+      </div>
+      <div class="end-time container">
+        <label for="end-time">End time</label>
+        <input id="end-time" placeholder="13:00" maxlength="5"> 
+      </div>
+      <button id="add-window" onclick="addWindow()">Add window</button>
+    </div>
+    <div id="timeline">
+      <div id="time-marks"></div>
+      <div id="completed"></div>
+      <div id="windows"></div>
+    </div>
+    <ul id="guest-list"></ul>
+  </body>
+</html>

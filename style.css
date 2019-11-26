@@ -1,0 +1,131 @@
+/*
+  #2F1812 dark brown
+  #40686A green
+  #915C4C chestnut
+  #B78338 copper
+*/
+
+:root {
+  --color-dark-brown: #2F1812;
+  --highlight-color:  #2F1812;
+  --mouseover-color:  #40686A;
+  --bg-color:         #B78338;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: monospace;
+  font-size: 15px;
+}
+
+h2 {
+}
+
+h2:before {
+  content: '~';
+  padding-right: 10px;
+}
+
+h2:after {
+  content: '~';
+  padding-left: 10px;
+}
+
+h3#current-time {
+  
+}
+
+.add-window .container {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.add-window label {
+  display: block;
+}
+
+.add-window input {
+  width: 50px;
+}
+#timeline {
+  min-height: 30px;
+  margin-top: 2rem;
+  width: 100%;
+  background-color: white;
+  border: 3px solid white;
+  border-radius: 4px;
+  position: relative;
+}
+
+#time-marks {
+  position: absolute;
+  top: -20px;
+  width: 100%;
+}
+
+#time-marks span {
+  display: inline-block;
+  border-left: 1px solid #000;
+  padding-left: 1px;
+  margin-right: -2px;
+}
+
+#completed {
+  width: 0;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-right: solid 1px;
+  transition: width 1s;
+  transition-timing-function: ease-out;
+  text-align: right;
+}
+
+#windows div {
+  padding: 4px 0;
+  white-space: nowrap;
+  background-color: var(--mouseover-color);
+  color: white;
+  margin: 2px 0;
+  border-radius: 2px;
+  overflow: visible;
+  font-size:0.7rem;
+  box-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 1px black;
+
+}
+
+ul#guest-list {
+  padding: 0;
+  list-style-type: none
+}
+
+ul#guest-list li {
+  margin: 3px;
+  padding: 5px 13px;
+  background-color: white;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+ul#guest-list li .icon {
+  font-size: 1.5em;
+  margin-right: 5px;
+}
+
+
+ul#guest-list li.current {
+  color: white;
+  background-color: var(--mouseover-color);
+}
+
+ul#guest-list li:hover {
+  color: white;
+  background-color: #599099;
+}
+
+button#add-dummy-window {
+  margin: 0 10px 40px 0;
+}
