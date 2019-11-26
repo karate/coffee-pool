@@ -15,6 +15,10 @@ Let your people decide when they're going to meet up to get some coffee.
 - Nothing else!
 
 ## Installation / Usage
+Install dependencies
+```bash
+$ npm install
+```
 Run nodejs server
 ```bash
 $ node server/app.js

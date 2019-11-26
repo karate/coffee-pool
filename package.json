@@ -1,0 +1,20 @@
+{
+  "name": "coffee-pool",
+  "version": "0.1.0",
+  "description": "Enterprise Coffee Pooling",
+  "license": "GPLV3",
+  "main": "server/app.js",
+  "dependencies": {
+    "websocket": "^1.0.30"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karate/coffee-pool.git"
+  },
+  "author": "karate",
+  "bugs": {
+    "url": "https://github.com/karate/coffee-pool/issues"
+  },
+  "homepage": "https://github.com/karate/coffee-pool#readme"
+}
