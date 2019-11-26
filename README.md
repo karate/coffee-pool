@@ -13,3 +13,10 @@ Let your people decide when they're going to meet up to get some coffee.
 - Node.js
 - Sockets.io
 - Nothing else!
+
+## Installation / Usage
+Run nodejs server
+```bash
+$ node server/app.js
+```
+open index.html in browser
