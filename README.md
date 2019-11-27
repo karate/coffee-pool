@@ -10,8 +10,8 @@ Let your people decide when they're going to meet up to get some coffee.
 - [ ] Show suggestions
 
 ## Technologies:
-- Node.js
-- Sockets.io
+- Node.js server
+- Pure Object Oriented JS client
 - Nothing else!
 
 ## Installation / Usage
@@ -23,4 +23,4 @@ Run nodejs server
 ```bash
 $ node server/app.js
 ```
-Visit `locahost:8080` in your browser
+Visit `localhost:8080` in your browser
