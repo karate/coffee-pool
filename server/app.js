@@ -3,11 +3,21 @@ var User = require('./user.js');
 
 const http = require('http');
 const WebSocketServer = require('websocket').server;
+const serveStatic = require('serve-static');
+const finalhandler = require('finalhandler');
+
 const userList = {};
 const userHistory = {};
 const clients = [];
 const windowList = [];
 var userIdx = 0;
+
+var serve = serveStatic('.', { 'index': ['index.html'] });
+var WebServer = http.createServer(function onRequest (req, res) {
+  serve(req, res, finalhandler(req, res))
+})
+WebServer.listen(8080);
+
 const server = http.createServer();
 server.listen(9898);
 

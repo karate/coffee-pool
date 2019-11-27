@@ -23,4 +23,4 @@ Run nodejs server
 ```bash
 $ node server/app.js
 ```
-open index.html in browser
+Visit `locahost:8080` in your browser
