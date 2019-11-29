@@ -1,4 +1,4 @@
-//import User from './user.js'
+import Cookie from './cookies.js'
 import Timeline from './timeline.js'
 
 class WS {
@@ -11,7 +11,7 @@ class WS {
     this.socket.onopen = function() {
         console.log('WebSocket Client Connected');
         // Create user
-        var idxInCookie = document.cookie.split('=')[1]
+        var idxInCookie = Cookie.getCookie('coffeePool');
         var d = {type: 'createUser', idx: idxInCookie};
         s.send(JSON.stringify(d));
         // Request for windows
@@ -27,7 +27,7 @@ class WS {
         userListElement.innerHTML=  '';
         for (var idx in payload.users) {
           var u = payload.users[idx];
-          var idxInCookie = document.cookie.split('=')[1]
+          var idxInCookie = Cookie.getCookie('coffeePool');
           this.userList = document.getElementById('guest-list');
           var li = document.createElement('li');
           if (idxInCookie == idx) {

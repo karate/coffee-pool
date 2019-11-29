@@ -1,3 +1,5 @@
+import Cookie from './cookies.js'
+
 class Timeline {
   constructor (startTime, endTime) {
     // Get some elements from the HTML
@@ -61,7 +63,7 @@ class Timeline {
       var endPerc = this.getPercentageOfDay(endDate);
       // Create the window
       var win = document.createElement('div');
-      var idxInCookie = document.cookie.split('=')[1];
+      var idxInCookie = Cookie.getCookie('coffeePool');
       if (idxInCookie == windowData.owner) {
           win.classList.add('mine');
       }
