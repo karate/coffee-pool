@@ -12,7 +12,7 @@ const clients = [];
 const windowList = [];
 var userIdx = 0;
 
-var serve = serveStatic('.', { 'index': ['index.html'] });
+var serve = serveStatic('app/client', { 'index': ['index.html'] });
 var WebServer = http.createServer(function onRequest (req, res) {
   serve(req, res, finalhandler(req, res))
 })
@@ -46,14 +46,12 @@ wsServer.on('request', function(request) {
         }
 
         // User currently logged in
-        console.log(userList, payload.idx);
         if (Object.keys(userList).includes(payload.idx)) {
           console.log('User currenlty logged in. skipping');
         }
         else {
           // returning user
           console.log('Request for user: ', payload.idx);
-          console.log('userHistory: ', userHistory);
           if (Object.keys(userHistory).includes(payload.idx)) {
             user = userHistory[payload.idx];
             console.log('Found: ', user);
@@ -73,19 +71,15 @@ wsServer.on('request', function(request) {
         broadcast(JSON.stringify({type: 'userList', users: userList}))
       }
       else if (payload.type == 'message' ) {
-        console.log('Received message:', payload );
         // broadcast message to all connected clients
         broadcast(message.utf8Data);
       }
       else if (payload.type == 'window' ) {
-        console.log('Received window', payload );
         payload.win.owner = connection.userIdx;
         windowList.push(payload.win);
-        console.log(windowList);
         broadcast(JSON.stringify({type: 'windowList', windows: windowList}));
       }
       else if (payload.type == 'requestWindowList' ) {
-        console.log('Window list requested. sending: ', windowList);
         connection.sendUTF(JSON.stringify({type: 'windowList', windows: windowList}));
       }
     });

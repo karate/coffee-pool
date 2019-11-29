@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "description": "Enterprise Coffee Pooling",
   "license": "GPLV3",
-  "main": "server/app.js",
+  "main": "app/server/app.js",
   "scripts": {
-    "start" : "node server/app.js"
+    "start" : "node app/server/app.js"
   },
   "dependencies": {
     "finalhandler": "^1.1.2",
