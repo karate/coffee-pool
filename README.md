@@ -38,4 +38,4 @@ Visit `localhost:8080` in your browser
 
 ## Contribute
 Thank you for your interest!
-Since the project is still very youg, please create an issue and let's discuss any changes / fixes before creating a Pull Request.
+Since the project is still very young, please create an issue and let's discuss any changes / fixes before creating a Pull Request.
