@@ -55,9 +55,15 @@ class Timeline {
       var endPerc = this.getPercentageOfDay(endDate);
       // Create the window
       var win = document.createElement('div');
+      win.start = startDate;
+      win.end = endDate;
       var idxInCookie = Cookie.getCookie('coffeePool');
       if (idxInCookie == windowData.owner) {
-          win.classList.add('mine');
+        win.classList.add('mine');
+        // Remove window on click
+        win.addEventListener("click", function(){
+          window.ws.removeWindow({start: this.start, end: this.end, userIdx: idxInCookie});
+        });
       }
       // Position
       win.style.marginLeft = startPerc + "%";

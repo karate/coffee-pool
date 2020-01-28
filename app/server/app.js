@@ -74,8 +74,7 @@ wsServer.on('request', function(request) {
         // broadcast message to all connected clients
         broadcast(message.utf8Data);
       }
-      else if (payload.type == 'window' ) {
-        console.log(payload);
+      else if (payload.type == 'addWindow' ) {
         var now = new Date();
         var start = new Date(payload.win.start);
         var end = new Date(payload.win.end);
@@ -84,6 +83,22 @@ wsServer.on('request', function(request) {
           windowList.push(payload.win);
           broadcast(JSON.stringify({type: 'windowList', windows: windowList}));
         }
+      }
+      else if (payload.type == 'removeWindow' ) {
+        console.log(payload.win, windowList);
+        windowList.forEach(function(win, idx){
+          if (
+            win.start == payload.win.start &&
+            win.end == payload.win.end &&
+            win.owner == payload.win.userIdx
+          ) {
+            windowList.splice(idx, 1);
+            broadcast(JSON.stringify({type: 'windowList', windows: windowList}));
+          }
+          else {
+            console.log('THIS IS NOT YOURS TO DELETE!!');
+          }
+        });
       }
       else if (payload.type == 'requestWindowList' ) {
         connection.sendUTF(JSON.stringify({type: 'windowList', windows: windowList}));

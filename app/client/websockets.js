@@ -47,9 +47,13 @@ class WS {
     };
   }
 
+  removeWindow(win) {
+    var d = {type: 'removeWindow', win: win}
+    this.socket.send(JSON.stringify(d));
+  }
 
   sendWindow(win) {
-    var d = {type: 'window', win: win}
+    var d = {type: 'addWindow', win: win}
     this.socket.send(JSON.stringify(d));
   }
 }

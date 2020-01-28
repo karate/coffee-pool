@@ -96,6 +96,7 @@ h3#current-time {
 
 #windows div.mine {
   background-color: var(--mouseover-color);
+  cursor: pointer;
 }
 
 ul#guest-list {
