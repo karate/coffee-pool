@@ -5,7 +5,7 @@
   "license": "GPLV3",
   "main": "app/server/app.js",
   "scripts": {
-    "start" : "node app/server/app.js"
+    "start" : "env TZ='Europe/Athens' node app/server/app.js"
   },
   "dependencies": {
     "finalhandler": "^1.1.2",
