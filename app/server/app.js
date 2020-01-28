@@ -75,9 +75,15 @@ wsServer.on('request', function(request) {
         broadcast(message.utf8Data);
       }
       else if (payload.type == 'window' ) {
-        payload.win.owner = connection.userIdx;
-        windowList.push(payload.win);
-        broadcast(JSON.stringify({type: 'windowList', windows: windowList}));
+        console.log(payload);
+        var now = new Date();
+        var start = new Date(payload.win.start);
+        var end = new Date(payload.win.end);
+        if (start < end && end > now) {
+          payload.win.owner = connection.userIdx;
+          windowList.push(payload.win);
+          broadcast(JSON.stringify({type: 'windowList', windows: windowList}));
+        }
       }
       else if (payload.type == 'requestWindowList' ) {
         connection.sendUTF(JSON.stringify({type: 'windowList', windows: windowList}));
