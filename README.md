@@ -20,12 +20,14 @@ Currently using:
 - Pure Object Oriented JS client
 - Nothing else!
 
-## Installation / Usage
+## Installation
 Clone repo:
 ```bash
 git clone https://github.com/karate/coffee-pool.git
 cd coffee-pool/
 ```
+
+### Local install
 Install dependencies:
 ```bash
 $ npm install
@@ -34,6 +36,14 @@ Run Node.js server:
 ```bash
 $ npm start
 ```
+
+### Using docker:
+```bash
+docker image build -t coffee-pool .
+docker run -p 8080:8080 -p 9898:9898 coffee-pool
+```
+
+## Usage
 Visit `localhost:8080` in your browser
 
 ## Contribute
