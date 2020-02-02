@@ -78,7 +78,7 @@ wsServer.on('request', function(request) {
         var now = new Date();
         var start = new Date(payload.win.start);
         var end = new Date(payload.win.end);
-        if (start < end && end > now) {
+        if (start < end && start > now) {
           payload.win.owner = connection.userIdx;
           windowList.push(payload.win);
           broadcast(JSON.stringify({type: 'windowList', windows: windowList}));
